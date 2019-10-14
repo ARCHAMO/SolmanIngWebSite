@@ -1,0 +1,25 @@
+<div class="service section">
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let service of arrayServices" class="col-md-4 col-sm-4 col-xl-12">
+                <div class="service-box">
+                    <div class="service-head">
+                        <a class="icon">
+                            <i class="{{ service.icono }}"></i>
+                        </a>
+                        <div [innerHTML]="service.titulo"></div>
+                        <div [innerHTML]="service.subTitulo"></div>
+                        
+                    </div>
+                    <div class="service-content">
+                        <p>{{ service.descripcion }}</p>
+                        <a (click)="masDetalles()" class="btn btn-effect">{{ service.textoBoton }} <i
+                                class="{{ service.iconoBoton }}"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
+</div>

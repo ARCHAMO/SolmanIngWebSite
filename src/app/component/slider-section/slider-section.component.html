@@ -1,0 +1,38 @@
+<section id="slider">
+    <div class="tp-banner-container">
+        <div class="tp-banner">
+            <ul>
+                <li *ngFor="let slider of arraySlider" data-transition="fade" data-slotamount="7"
+                    data-masterspeed="2000" data-bgfit="cover"
+                    data-delay="5000" data-saveperformance="on" data-title="Ken Burns Slide">
+                    <!-- MAIN IMAGE -->
+                    <img [src]="slider.urlImagen" alt="laptopmockup_sliderdy">
+                    <!-- LAYERS -->
+                    <div class="tp-caption large_bold_white lft tp-resizeme start" data-x="30" data-y="130"
+                        data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                        data-speed="800" data-start="1200" data-easing="easeOutQuad" data-splitin="none"
+                        data-splitout="none" data-elementdelay="0.01" data-endelementdelay="0.1" data-endspeed="1000"
+                        data-endeasing="Power4.easeIn" style="z-index: 11;">
+                        <div [innerHTML]="slider.titulo"></div>
+                    </div>
+                    <div class="tp-caption lfl tp-resizeme start" data-x="30" data-y="260"
+                        data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                        data-speed="800" data-start="1600" data-easing="easeOutQuad" data-splitin="none"
+                        data-splitout="none" data-elementdelay="0.01" data-endelementdelay="0.1" data-endspeed="1000"
+                        data-endeasing="Power4.easeIn" style="z-index: 11;">
+                        <p class="small-description">{{ slider.subTitulo }}</p>
+                    </div>
+                    <div class="tp-caption customin tp-resizeme start" data-x="30" data-y="320"
+                        data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                        data-speed="800" data-start="1800" data-easing="easeOutQuad" data-splitin="none"
+                        data-splitout="none" data-elementdelay="0.01" data-endelementdelay="0.1" data-endspeed="1300"
+                        data-endeasing="Power4.easeIn" style="z-index: 11;">
+                        <a (click)="accionBoton(slider.rutaBoton)" class="btn btn-large btn-effect">{{ slider.textoBoton }} <i
+                                class="{{slider.iconoBoton}}"></i></a>
+                    </div>
+                </li>
+            </ul>
+            <div class="tp-bannertimer"></div>
+        </div>
+    </div>
+</section>
