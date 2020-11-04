@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash/cloneDeep"
+            ],
             "aot": true,
             "outputPath": "dist/SolmanIngWebSite-V8",
             "index": "src/index.html",

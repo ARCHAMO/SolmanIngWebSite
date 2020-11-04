@@ -17,6 +17,7 @@ import { TestimonialSectionComponent } from './component/testimonial-section/tes
 import { ClientSectionComponent } from './component/client-section/client-section.component';
 import { FooterSectionComponent } from './component/footer-section/footer-section.component';
 import { CopyrightSectionComponent } from './component/copyright-section/copyright-section.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CopyrightSectionComponent } from './component/copyright-section/copyrig
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
