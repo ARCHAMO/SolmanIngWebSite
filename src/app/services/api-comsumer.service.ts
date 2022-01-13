@@ -14,8 +14,14 @@ export class ApiComsumerService {
   ) {
   }
 
-  getMethod(webApi, token = this.authCodeNode, page = 0) {
-    const urlWebApi = this.REST_API_SERVER + webApi + '/' + page;
+  getMethod(webApi, token = this.authCodeNode, page = null) {
+    let urlWebApi = '';
+    if (page !== null) {
+      urlWebApi = this.REST_API_SERVER + webApi + '/' + page;
+    } else {
+      urlWebApi = this.REST_API_SERVER + webApi;
+    }
+
     const headers = new HttpHeaders(
       {
         'Content-Type': 'application/json',

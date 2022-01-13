@@ -9,17 +9,14 @@
             <!-- Portfolio controls -->
             <div class="controls text-center">
                 <a class="filter active" data-filter="all">Todos</a>
-                <a class="filter" data-filter=".buildings">Obra civil</a>
-                <a class="filter" data-filter=".architecture">Herreria</a>
-                <a class="filter" data-filter=".interior">Interiores</a>
-                <a class="filter" data-filter=".isolation">Exteriores</a>
+                <a class="filter" data-filter=".nuevo" *ngFor="let type of arrayTypeProjects">{{ type.nombre }}</a>
             </div>
             <!-- End Portfolio Controls -->
         </div>
     </div>
     <!-- Portfolio Recent Projects -->
     <div id="portfolio-list">
-        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 mix buildings interior">
+        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 mix buildings dentro">
             <div class="portfolio-item">
                 <img src="assets/img/portfolio/img-1.jpg" alt=""/>
                 <div class="overlay">
@@ -68,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 mix interior">
+        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 mix dentro">
             <div class="portfolio-item">
                 <img src="assets/img/portfolio/img-4.jpg" alt=""/>
                 <div class="overlay">
@@ -84,7 +81,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 mix buildings interior">
+        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 mix buildings dentro">
             <div class="portfolio-item">
                 <img src="assets/img/portfolio/img-5.jpg" alt=""/>
                 <div class="overlay">

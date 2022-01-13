@@ -143,5 +143,8 @@
       }
     }
   },
-  "defaultProject": "SolmanIngWebSite-V8"
+  "defaultProject": "SolmanIngWebSite-V8",
+  "cli": {
+    "analytics": "cb45a3bb-e633-4afc-a2fe-7ec3342753ad"
+  }
 }

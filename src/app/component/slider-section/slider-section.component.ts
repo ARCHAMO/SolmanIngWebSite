@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Utils } from '@shared/global/utils';
 import { SliderFront } from 'src/app/models/slider-front';
 import { ApiComsumerService } from '../../services/api-comsumer.service';
-import * as cloneDeep from 'lodash/cloneDeep';
 
+declare var jQuery: any;
 @Component({
     selector: 'app-slider-section',
     templateUrl: './slider-section.component.html',
@@ -12,6 +11,7 @@ import * as cloneDeep from 'lodash/cloneDeep';
 export class SliderSectionComponent implements OnInit {
 
     public arraySliders: SliderFront[] = [];
+    public revapi: any;
 
     constructor(
         private apiConsumer: ApiComsumerService
@@ -21,8 +21,9 @@ export class SliderSectionComponent implements OnInit {
     ngOnInit() {
         // this.apiConsumer.getMethod('sliders').subscribe(
         //     (response: any) => {
-        //         this.arraySliders = cloneDeep(response.docs);
-        //         console.log(this.arraySliders);
+        //         response.docs.forEach(element => {
+        //             this.arraySliders.push(element);
+        //         });
         //     },
         //     error => {
         //         console.log(error);
@@ -31,36 +32,34 @@ export class SliderSectionComponent implements OnInit {
 
         //     }
         // );
-        setTimeout(() => {
 
-            this.arraySliders = [];
-            let slider = new SliderFront();
-            slider.titulo = '<p class="big-title">Acompañamos la construcción de <br> tus proyectos</p>';
-            slider.subTitulo = 'Proyectos a la medida de tus necesidades, con garantia de satisfacción.';
-            slider.textoBoton = 'Leer mas';
-            slider.rutaBoton = 'Leer mas';
-            slider.iconoBoton = 'icon-arrow-right';
-            slider.urlImagen = 'assets/img/slider/slide1.jpg';
-            this.arraySliders.push(slider);
+        this.arraySliders = [];
+        let slider = new SliderFront();
+        slider.titulo = '<p class="big-title">Acompañamos la construcción de <br> tus proyectos</p>';
+        slider.subTitulo = 'Proyectos a la medida de tus necesidades, con garantia de satisfacción.';
+        slider.textoBoton = 'Leer mas';
+        slider.rutaBoton = 'Leer mas';
+        slider.iconoBoton = 'icon-arrow-right';
+        slider.urlImagen = 'assets/img/slider/slide1.jpg';
+        this.arraySliders.push(slider);
 
-            slider = new SliderFront();
-            slider.titulo = '<p class="big-title">Haz que suceda Ahora!</p>';
-            slider.subTitulo = 'La visión de cambio esta en tus manos, solo tu sabes cuando hacer la diferencia.';
-            slider.textoBoton = 'Contactenos';
-            slider.rutaBoton = 'Contactenos';
-            slider.iconoBoton = 'icon-arrow-right';
-            slider.urlImagen = 'assets/img/slider/slide2.jpg';
-            this.arraySliders.push(slider);
+        slider = new SliderFront();
+        slider.titulo = '<p class="big-title">Haz que suceda Ahora!</p>';
+        slider.subTitulo = 'La visión de cambio esta en tus manos, solo tu sabes cuando hacer la diferencia.';
+        slider.textoBoton = 'Contactenos';
+        slider.rutaBoton = 'Contactenos';
+        slider.iconoBoton = 'icon-arrow-right';
+        slider.urlImagen = 'assets/img/slider/slide2.jpg';
+        this.arraySliders.push(slider);
 
-            slider = new SliderFront();
-            slider.titulo = '<p class="big-title">La solución que tu empresa necesita</p>';
-            slider.subTitulo = 'Dejanos ser tu aliado estrategico para culminar tus proyectos con el 100% de satisfactión.';
-            slider.textoBoton = 'Comenzemos';
-            slider.rutaBoton = 'Comenzemos';
-            slider.iconoBoton = 'icon-arrow-right';
-            slider.urlImagen = 'assets/img/slider/slide3.jpg';
-            this.arraySliders.push(slider);
-        });
+        slider = new SliderFront();
+        slider.titulo = '<p class="big-title">La solución que tu empresa necesita</p>';
+        slider.subTitulo = 'Dejanos ser tu aliado estrategico para culminar tus proyectos con el 100% de satisfactión.';
+        slider.textoBoton = 'Comenzemos';
+        slider.rutaBoton = 'Comenzemos';
+        slider.iconoBoton = 'icon-arrow-right';
+        slider.urlImagen = 'assets/img/slider/slide3.jpg';
+        this.arraySliders.push(slider);
     }
 
     accionBoton(ruta: string) {

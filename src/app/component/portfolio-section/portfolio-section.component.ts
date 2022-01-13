@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiComsumerService } from 'src/app/services/api-comsumer.service';
+import { TypeProject } from '../../models/typeproject';
 
 @Component({
   selector: 'app-portfolio-section',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioSectionComponent implements OnInit {
 
-  constructor() { }
+  public arrayTypeProjects: TypeProject[] = [];
+
+  constructor(
+    private apiConsumer: ApiComsumerService
+  ) { }
 
   ngOnInit() {
+    this.apiConsumer.getMethod('typeprojects').subscribe(
+      (response: any) => {
+        this.arrayTypeProjects = response.docs;
+      },
+      error => {
+        console.log(error);
+      },
+      () => {
+
+      }
+    )
   }
 
 }
